@@ -2,22 +2,17 @@
 import CounterList from './CounterList'
 
 export default {
-  data() {
-    return {
-      count: 0,
-      count_list: [0],
-    }
+  computed: {
+    nowCount() {
+      return this.$store.getters.nowCount
+    },
   },
   methods: {
-    increment() {
-      this.count += 1
-      this.count_list = [...Array(this.count + 1).keys()]
+    plusCount() {
+      return this.$store.dispatch('plusCount')
     },
-    decrement() {
-      if (this.count > 0) {
-        this.count -= 1
-        this.count_list = [...Array(this.count + 1).keys()]
-      }
+    minusCount() {
+      return this.$store.dispatch('minusCount')
     },
    },
    components: {CounterList},
@@ -27,10 +22,10 @@ export default {
 <template>
   <div>
     <div>
-      <button @click="decrement">-</button>
-      <span>{{count}}</span>
-      <button @click="increment">+</button>
+      <button @click="minusCount">-</button>
+      <span>{{nowCount}}</span>
+      <button @click="plusCount">+</button>
     </div>
-    <counter-list :count_list="count_list"/>
+    <counter-list/>
   </div>
 </template>

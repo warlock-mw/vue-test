@@ -94,8 +94,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.vue$/, 
-        loader: 'vue-loader' 
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
@@ -103,7 +103,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader'] 
+        use: ['vue-style-loader', 'css-loader']
       },
     ]
   },
@@ -140,11 +140,11 @@ module.exports = {
 - src/index.js を編集
 ```
 import Vue from 'vue'
-import App from './components/App' 
+import App from './components/App'
 new Vue({
   el: '#app',
-  components: { App }, 
-  template: '<app/>', 
+  components: { App },
+  template: '<app/>',
 })
 ```
 - 動作確認
@@ -197,7 +197,7 @@ npm start
 ```
 npm start
 ```
-- src/components/Counter.vue に追加 
+- src/components/Counter.vue に追加
 ```
 <script>
   export default {
@@ -263,7 +263,7 @@ webpack の -p オプションは NODE_ENV=production の指定とwebpack.optimi
 ###  コンポーネントに親子関係を持たせる
 ###  親から子へデータを渡してみる
 - src/components/Counter.vue を変更
-``` 
+```
 <script>
 import CounterList from './CounterList'
 
@@ -325,4 +325,14 @@ export default {
 npm start
 ```
 ***
-## 次回は Vuex、Vue Router を予定
+## Vuex、Vue Router を導入
+- Vue Router インストール
+```
+npm i -S vue-router
+```
+- Vuex インストール
+```
+npm i -S vuex vuex-router-sync
+```
+- ファイルとフォルダを色々追加・変更
+- 詳しくはvuex-and-vue-router ブランチを参照
