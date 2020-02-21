@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import axios from 'axios'
 
 const state = {
   count: 0,
@@ -19,10 +20,14 @@ const mutations = {
 }
 
 const actions = {
-  plusCount: ({commit}) => {
+  async plusCount({commit}) {
+    const url = "https://qiita.com/api/v2/items"
+    const q   = await axios.get(url)
+
+    console.log(q)
     commit('INCREMENT')
   },
-  minusCount: ({commit}) => {
+  minusCount({commit}) {
     commit('DECREMENT')
   },
 }

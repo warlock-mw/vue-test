@@ -2,6 +2,11 @@
 import CounterList from './CounterList'
 
 export default {
+  data() {
+    return {
+        isError: 0
+    }
+  },
   computed: {
     nowCount() {
       return this.$store.getters.nowCount
@@ -9,7 +14,11 @@ export default {
   },
   methods: {
     plusCount() {
-      return this.$store.dispatch('plusCount')
+      return this.$store.dispatch('plusCount').catch(error => {
+          this.isError = 1
+
+          console.log(this.isError)
+      })
     },
     minusCount() {
       return this.$store.dispatch('minusCount')
