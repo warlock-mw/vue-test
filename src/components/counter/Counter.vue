@@ -1,5 +1,5 @@
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import CounterList from '@/components/counter/CounterList'
 
 export default {
@@ -7,14 +7,9 @@ export default {
     ...mapGetters('counter', ['nowCount']),
   },
   methods: {
-    plusCount() {
-      return this.$store.dispatch('counter/plusCount')
-    },
-    minusCount() {
-      return this.$store.dispatch('counter/minusCount')
-    },
-   },
-   components: {CounterList},
+    ...mapActions('counter', ['plusClunt', 'minusCount']),
+  },
+  components: { CounterList },
 }
 </script>
 
