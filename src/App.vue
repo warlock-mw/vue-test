@@ -25,6 +25,6 @@ export default {
 <style scoped>
   #app {
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
   }
 </style>

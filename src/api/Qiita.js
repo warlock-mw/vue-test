@@ -7,7 +7,7 @@ export default class Qiita {
     }
 
     async get() {
-        res = await axios.get(this.url)
+        const res = await axios.get(this.url)
 
         return res.data.map(val => {
             return {

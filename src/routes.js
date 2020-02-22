@@ -1,9 +1,9 @@
 import Counter from '@/pages/Counter'
-import B from '@/pages/B'
+import Qiita from '@/pages/Qiita'
 import C from '@/pages/C'
 
 export const routes = [
   { path: '/counter', component: Counter },
-  { path: '/b', component: B },
+  { path: '/qiita', component: Qiita },
   { path: '/c', component: C },
 ]
