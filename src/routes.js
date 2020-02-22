@@ -1,9 +1,9 @@
-import A from './pages/A'
-import B from './pages/B'
-import C from './pages/C'
+import Counter from '@/pages/Counter'
+import B from '@/pages/B'
+import C from '@/pages/C'
 
 export const routes = [
-  { path: '/a', component: A },
+  { path: '/counter', component: Counter },
   { path: '/b', component: B },
   { path: '/c', component: C },
 ]

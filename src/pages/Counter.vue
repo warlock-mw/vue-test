@@ -1,5 +1,5 @@
 <script>
-import Counter from '../components/Counter'
+import Counter from '@/components/counter/Counter'
 
 export default {
   components: { Counter },
@@ -8,7 +8,7 @@ export default {
 
 <template>
   <div>
-    <p>A</p>
-    <counter/>
+    <p>カウンター</p>
+    <counter />
   </div>
 </template>

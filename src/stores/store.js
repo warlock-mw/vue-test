@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import counter from './modules/counter'
+import counter from '@/stores/modules/counter'
 
 Vue.use(Vuex)
 

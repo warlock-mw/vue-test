@@ -1,28 +1,30 @@
+<script>
+import AppNav from '@/components/AppNav'
+import AppHeader from '@/components/AppHeader'
+import AppFooter from '@/components/AppFooter'
+
+export default {
+    components: {
+        AppNav,
+        AppHeader,
+        AppFooter,
+    },
+}
+</script>
+
 <template>
   <div id="app">
-    <router-link to="/a">A へ移動</router-link>
-    <router-link to="/b">B へ移動</router-link>
-    <router-link to="/c">C へ移動</router-link>
+    <app-nav />
     <hr />
-    <div class="header">ヘッダー</div>
+    <app-header />
     <router-view></router-view>
-    <div class="footer">フッター</div>
+    <app-footer />
   </div>
 </template>
 
-<style>
+<style scoped>
   #app {
     text-align: center;
     font-size: 40px;
-  }
-  .header {
-    height: 50px;
-    background-color: #ebebeb;
-    margin-bottom: 50px;
-  }
-  .footer {
-    height: 50px;
-    background-color: #ebebeb;
-    margin-top: 70px;
   }
 </style>

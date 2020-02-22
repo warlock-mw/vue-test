@@ -28,9 +28,14 @@ module.exports = {
     ]
   },
   resolve: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules',
+    ],
     extensions: ['.js', '.vue'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   plugins: [
