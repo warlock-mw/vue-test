@@ -1,6 +1,3 @@
-import Vue from 'vue'
-import axios from 'axios'
-
 import Qiita from '@/api/Qiita'
 
 const state = {

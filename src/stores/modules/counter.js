@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 const state = {
   count: 0,
   count_list: [0],

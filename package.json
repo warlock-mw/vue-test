@@ -39,6 +39,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "vue": "^2.6.11",
+    "vue-d3-network": "^0.1.28",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2",
     "vuex-router-sync": "^5.0.0"

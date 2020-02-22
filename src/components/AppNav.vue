@@ -2,7 +2,7 @@
     <div id="navi">
         <router-link to="/counter">カウンター</router-link>
         <router-link to="/qiita">Qiita</router-link>
-        <router-link to="/c">C へ移動</router-link>
+        <router-link to="/graph">グラフ</router-link>
     </div>
 </template>
 
