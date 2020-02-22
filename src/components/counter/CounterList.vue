@@ -11,7 +11,7 @@ export default {
 <template>
   <table border="1">
     <tr>
-      <td v-for="val in nowCountList">{{ val }}</td>
+      <td v-for="(val, key) in nowCountList" :key="key">{{ val }}</td>
     </tr>
   </table>
 </template>
