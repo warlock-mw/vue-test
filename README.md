@@ -16,7 +16,7 @@ anyenv init
 
 # bash_profile or .zshrc へ eval "$(anyenv init -)" を追記
 
-anyenv intall --init
+anyenv install --init
 anyenv install nodenv
 exec $SHELL -l
 nodenv
@@ -36,6 +36,8 @@ npm init -y
 ```
 
 ## アプリ作成手順
+
+### ①まずはプロジェクトを作成しよう
 ```
 npm install --save-dev webpack webpack-cli webpack-dev-server
 ```
@@ -80,17 +82,25 @@ console.log('Hello, World!')
 ```
 npm start
 ```
-- ブラウザで http://localhost:8080 を開く
+- ブラウザで http://localhost:8080 を開く(白い画面が表示されていれば成功です!!)
+
+### ②「Hello World」を表示しよう
+
+
 - vue インストール
 ```
 npm i --save vue
 npm i -D vue-loader vue-template-compiler css-loader style-loader
 npm i -D babel-loader @babel/core @babel/preset-env
 ```
-- webpack.config.js に以下を追加
+- webpack.config.js を編集
+
+1.constを追加
 ```
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-module.exports = {
+```
+2.module.exportsに以下を追加
+```
   module: {
     rules: [
       {
@@ -116,14 +126,10 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin()
   ],
-}
-
- package.json に以下を追加
-"babel": {
-    "presets": ["@babel/preset-env"]
-  },
 ```
+
 - package.json に以下を追加
+
 ```
 "babel": {
     "presets": ["@babel/preset-env"]
@@ -147,10 +153,12 @@ new Vue({
   template: '<app/>', 
 })
 ```
-- 動作確認
+- 動作確認(「Hello World」と画面に表示されていれば成功です!!)
 ```
 npm start
 ```
+### ③スタイルをつけよう！！
+
 - src/components/App.vue にスタイルを追加
 ```
 <style scoped>
@@ -159,9 +167,33 @@ npm start
   }
 </style>
 ```
-- 動作確認
+- 動作確認(「Hello World」が赤い枠で囲まれていれば成功!!)
 ```
 npm start
+```
+
+### ④カウンターを作ろう
+
+- src/components/App.vue にscriptタグを追加
+
+```
+<script>
+import Counter from './Counter'
+
+export default {
+  components: {Counter},
+}
+</script>
+```
+
+- src/components/App.vue のtemplateにcounterタグを追加
+```
+<template>
+  <div>
+    <p>Hello, World!</p>
++   <counter/>
+  </div>
+</template>
 ```
 - src/components/Counter.vue を作成
 ```
@@ -193,10 +225,12 @@ npm start
     </div>
   </template>
 ```
-- 動作確認
+- 動作確認(Hello Worldの下に0と「＋」「ー」ボタンが表示されていますがまだボタンを押しても反応しません。)
 ```
 npm start
 ```
+### ④「＋」「-」ボタンを押して数字を増減させよう!!
+
 - src/components/Counter.vue に追加 
 ```
 <script>
@@ -226,10 +260,14 @@ npm start
     </div>
   </template>
 ```
-- 動作確認
+
+- 動作確認(＋、-のボタンがついていて、ボタンを押すと数字が増減するようになります)
 ```
 npm start
 ```
+
+### ⑤プロジェクトをビルドしよう!!
+
 - プロダクションビルド用の設定を package.json に追加
 ```
 "build": "webpack -p"
