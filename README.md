@@ -173,6 +173,7 @@ npm start
 ```
 - 動作確認(「Hello World」が赤い枠で囲まれていれば成功!!)
 ```
+npm install
 npm start
 ```
 
@@ -273,6 +274,10 @@ npm i -D copy-webpack-plugin
 - package.json の "devDependencies"にあるcopy-webpack-pluginのバージョンを落とす
 ```
   "copy-webpack-plugin": "^5.1.1",
+```
+再度インストール
+```
+npm install
 ```
 - webpack.config.js に設定追加
 ```
