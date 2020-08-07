@@ -41,7 +41,7 @@ npm init -y
 ```
 npm install --save-dev webpack webpack-cli webpack-dev-server
 ```
-- package.json の script に 追加
+- package.json の scripts に 追加
 ```
 "start": "webpack-dev-server --hot"
 ```
@@ -52,7 +52,7 @@ const path = require('path')
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, './dest'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js'
   },
   devServer: {
@@ -167,6 +167,10 @@ npm start
   }
 </style>
 ```
+- package.json のcss-loaderのバージョンを落とす
+```
+  "css-loader": "^3.4.2",
+```
 - 動作確認(「Hello World」が赤い枠で囲まれていれば成功!!)
 ```
 npm start
@@ -197,33 +201,23 @@ export default {
 ```
 - src/components/Counter.vue を作成
 ```
+<script>
+export default {
+  data() {
+    return {
+      count: 0,
+    }
+  }
+}
+</script>
+
 <template>
   <div>
     <button>-</button>
-    <span>0</span>
+    <span>{{count}}</span>
     <button>+</button>
   </div>
 </template>
-```
-- src/components/Counter.vue に追加
-```
-+ <script>
-+ export default {
-+   data() {
-+     return {
-+       count: 0,
-+     }
-+   }
-+ }
-+ </script>
-<template>
-    <div>
-      <button>-</button>
--     <span>0</span>
-+     <span>{{count}}</span>
-      <button>+</button>
-    </div>
-  </template>
 ```
 - 動作確認(Hello Worldの下に0と「＋」「ー」ボタンが表示されていますがまだボタンを押しても反応しません。)
 ```
@@ -268,13 +262,17 @@ npm start
 
 ### ⑤プロジェクトをビルドしよう!!
 
-- プロダクションビルド用の設定を package.json に追加
+- プロダクションビルド用の設定を package.json のscriptsに追加
 ```
 "build": "webpack -p"
 ```
 - public ディレクトリ以下のファイルを dist にコピーするための用意
 ```
 npm i -D copy-webpack-plugin
+```
+- package.json の "devDependencies"にあるcopy-webpack-pluginのバージョンを落とす
+```
+  "copy-webpack-plugin": "^5.1.1",
 ```
 - webpack.config.js に設定追加
 ```
